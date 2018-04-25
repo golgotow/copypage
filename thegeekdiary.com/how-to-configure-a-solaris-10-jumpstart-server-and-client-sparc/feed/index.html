@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: How to Configure a  Solaris 10 Jumpstart server and client [SPARC]</title>
+	<atom:link href="http://thegeekdiary.com/how-to-configure-a-solaris-10-jumpstart-server-and-client-sparc/feed/" rel="self" type="application/rss+xml" />
+	<link>http://thegeekdiary.com/how-to-configure-a-solaris-10-jumpstart-server-and-client-sparc/</link>
+	<description>HowTos &#124; Concepts &#124; Guides</description>
+	<lastBuildDate>Thu, 28 Jan 2016 17:21:00 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.4.2</generator>
+	<item>
+		<title>By: parameswar</title>
+		<link>http://thegeekdiary.com/how-to-configure-a-solaris-10-jumpstart-server-and-client-sparc/#comment-7804</link>
+		<dc:creator><![CDATA[parameswar]]></dc:creator>
+		<pubDate>Sat, 23 Aug 2014 06:55:09 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=2088#comment-7804</guid>
+		<description><![CDATA[To enable tftp service 
+STEP 1) Uncomment tftp line in /etc/inetd.conf file.
+STEP 2) Use inetconv command to install tftp SMF and bring it online.
+
+# cat /etc/inetd.conf  &#124; grep -i tftp
+tftp  dgram   udp6    wait    root    /usr/sbin/in.tftpd      in.tftpd -s /tftpboot
+
+# inetconv -i /etc/inetd.conf
+inetconv: Notice: Service manifest for 100235/1 already generated as /var/svc/manifest/network/rpc/100235_1-rpc_ticotsord.xml, skipped
+tftp -&#062; /var/svc/manifest/network/tftp-udp6.xml
+Importing tftp-udp6.xml ...Done
+
+# svcs -a &#124; grep -i tftp
+online          8:20:39 svc:/network/tftp/udp6:default
+
+make sure /tftpboot directory is existed.]]></description>
+		<content:encoded><![CDATA[<p>To enable tftp service<br />
+STEP 1) Uncomment tftp line in /etc/inetd.conf file.<br />
+STEP 2) Use inetconv command to install tftp SMF and bring it online.</p>
+<p># cat /etc/inetd.conf  | grep -i tftp<br />
+tftp  dgram   udp6    wait    root    /usr/sbin/in.tftpd      in.tftpd -s /tftpboot</p>
+<p># inetconv -i /etc/inetd.conf<br />
+inetconv: Notice: Service manifest for 100235/1 already generated as /var/svc/manifest/network/rpc/100235_1-rpc_ticotsord.xml, skipped<br />
+tftp -&gt; /var/svc/manifest/network/tftp-udp6.xml<br />
+Importing tftp-udp6.xml &#8230;Done</p>
+<p># svcs -a | grep -i tftp<br />
+online          8:20:39 svc:/network/tftp/udp6:default</p>
+<p>make sure /tftpboot directory is existed.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: parameswar</title>
+		<link>http://thegeekdiary.com/how-to-configure-a-solaris-10-jumpstart-server-and-client-sparc/#comment-7802</link>
+		<dc:creator><![CDATA[parameswar]]></dc:creator>
+		<pubDate>Sat, 23 Aug 2014 06:23:53 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=2088#comment-7802</guid>
+		<description><![CDATA[please check tftp service on your jumpstart host]]></description>
+		<content:encoded><![CDATA[<p>please check tftp service on your jumpstart host</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: paul</title>
+		<link>http://thegeekdiary.com/how-to-configure-a-solaris-10-jumpstart-server-and-client-sparc/#comment-7705</link>
+		<dc:creator><![CDATA[paul]]></dc:creator>
+		<pubDate>Tue, 19 Aug 2014 22:54:17 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=2088#comment-7705</guid>
+		<description><![CDATA[I&#039;ve followed your tutorial as per your instructions, however it seems to bomb out when looking for the boot_archive...can you help out if possible...here&#039;s my output from boot - net - install...
+
+ok boot net -v - install
+Boot device: /pci@7c0/pci@0/network@4  File and args: -v - install
+100 Mbps full duplex  Link up
+Requesting Internet Address for 0:xx:xx:xx:xx:xx
+Requesting Internet Address for 0:xx:xx:xx:xx:xx
+Requesting Internet Address for 0:xx:xx:xx:xx:xx
+100 Mbps full duplex  Link up
+Using RARP/BOOTPARAMS...
+Internet address is: 192.168.1.30
+hostname: zeus11k
+domainname: sfv100.unix
+Found 192.168.1.100 @ 0:3:xx:xx:xx:xx
+root server: sfv100 (192.168.1.100)
+root directory: /mnt/Solaris_10/Tools/Boot
+cannot open neither boot_archive nor miniroot
+Enter filename [boot_archive]:
+
+ I am trying to jumpstart a T1000 (sun4v) - I amended to add_install_client as well on my sun fire v100 (I&#039;ve checked the nfs shares and can mount from another host no problem)
+
+cheers Paul]]></description>
+		<content:encoded><![CDATA[<p>I&#8217;ve followed your tutorial as per your instructions, however it seems to bomb out when looking for the boot_archive&#8230;can you help out if possible&#8230;here&#8217;s my output from boot &#8211; net &#8211; install&#8230;</p>
+<p>ok boot net -v &#8211; install<br />
+Boot device: /pci@7c0/pci@0/network@4  File and args: -v &#8211; install<br />
+100 Mbps full duplex  Link up<br />
+Requesting Internet Address for 0:xx:xx:xx:xx:xx<br />
+Requesting Internet Address for 0:xx:xx:xx:xx:xx<br />
+Requesting Internet Address for 0:xx:xx:xx:xx:xx<br />
+100 Mbps full duplex  Link up<br />
+Using RARP/BOOTPARAMS&#8230;<br />
+Internet address is: 192.168.1.30<br />
+hostname: zeus11k<br />
+domainname: sfv100.unix<br />
+Found 192.168.1.100 @ 0:3:xx:xx:xx:xx<br />
+root server: sfv100 (192.168.1.100)<br />
+root directory: /mnt/Solaris_10/Tools/Boot<br />
+cannot open neither boot_archive nor miniroot<br />
+Enter filename [boot_archive]:</p>
+<p> I am trying to jumpstart a T1000 (sun4v) &#8211; I amended to add_install_client as well on my sun fire v100 (I&#8217;ve checked the nfs shares and can mount from another host no problem)</p>
+<p>cheers Paul</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

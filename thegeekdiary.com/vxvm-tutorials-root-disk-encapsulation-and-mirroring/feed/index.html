@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: VxVM tutorials : Root disk Encapsulation and Mirroring</title>
+	<atom:link href="http://thegeekdiary.com/vxvm-tutorials-root-disk-encapsulation-and-mirroring/feed/" rel="self" type="application/rss+xml" />
+	<link>http://thegeekdiary.com/vxvm-tutorials-root-disk-encapsulation-and-mirroring/</link>
+	<description>HowTos &#124; Concepts &#124; Guides</description>
+	<lastBuildDate>Thu, 28 Jan 2016 17:21:00 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.4.2</generator>
+	<item>
+		<title>By: durga kumar</title>
+		<link>http://thegeekdiary.com/vxvm-tutorials-root-disk-encapsulation-and-mirroring/#comment-9790</link>
+		<dc:creator><![CDATA[durga kumar]]></dc:creator>
+		<pubDate>Sat, 27 Dec 2014 16:57:00 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=875#comment-9790</guid>
+		<description><![CDATA[Hi sandeep,
+
+when i booting with alternate boot disk at bios level. the current boot device is showing to primary boot disk
+
+bash-3.00# prtconf -pv&#124;grep -i boot
+bios-boot-device:  &#039;80&#039;
+bash-3.00#
+
+=====================
+bash-3.00# /sbin/biosdev
+0x80 /pci@0,0/pci-ide@7,1/ide@0/cmdk@0,0
+0x85 /pci@0,0/pci15ad,1976@10/sd@4,0
+bash-3.00#
+
+
+============================
+primary disk is c0d0 and alt disk is c2t4d0
+bash-3.00# echo&#124;format
+Searching for disks...done
+
+
+
+
+AVAILABLE DISK SELECTIONS:
+       0. c0d0 
+          /pci@0,0/pci-ide@7,1/ide@0/cmdk@0,0
+       5. c2t4d0 
+          /pci@0,0/pci15ad,1976@10/sd@4,0
+Specify disk (enter its number): Specify disk (enter its number):
+bash-3.00#]]></description>
+		<content:encoded><![CDATA[<p>Hi sandeep,</p>
+<p>when i booting with alternate boot disk at bios level. the current boot device is showing to primary boot disk</p>
+<p>bash-3.00# prtconf -pv|grep -i boot<br />
+bios-boot-device:  &#8217;80&#8217;<br />
+bash-3.00#</p>
+<p>=====================<br />
+bash-3.00# /sbin/biosdev<br />
+0x80 /pci@0,0/pci-ide@7,1/ide@0/cmdk@0,0<br />
+0x85 /pci@0,0/pci15ad,1976@10/sd@4,0<br />
+bash-3.00#</p>
+<p>============================<br />
+primary disk is c0d0 and alt disk is c2t4d0<br />
+bash-3.00# echo|format<br />
+Searching for disks&#8230;done</p>
+<p>AVAILABLE DISK SELECTIONS:<br />
+       0. c0d0<br />
+          /pci@0,0/pci-ide@7,1/ide@0/cmdk@0,0<br />
+       5. c2t4d0<br />
+          /pci@0,0/pci15ad,1976@10/sd@4,0<br />
+Specify disk (enter its number): Specify disk (enter its number):<br />
+bash-3.00#</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: vidhul</title>
+		<link>http://thegeekdiary.com/vxvm-tutorials-root-disk-encapsulation-and-mirroring/#comment-7683</link>
+		<dc:creator><![CDATA[vidhul]]></dc:creator>
+		<pubDate>Tue, 19 Aug 2014 11:17:34 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=875#comment-7683</guid>
+		<description><![CDATA[remove the grub entry ‘vxvm_root’ and try again .. you will get it.]]></description>
+		<content:encoded><![CDATA[<p>remove the grub entry ‘vxvm_root’ and try again .. you will get it.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Harish</title>
+		<link>http://thegeekdiary.com/vxvm-tutorials-root-disk-encapsulation-and-mirroring/#comment-7564</link>
+		<dc:creator><![CDATA[Harish]]></dc:creator>
+		<pubDate>Thu, 14 Aug 2014 12:17:31 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=875#comment-7564</guid>
+		<description><![CDATA[Hi Arjun,
+
+Please check the below link for the solution.
+
+http://www.symantec.com/business/support/index?page=content&#038;id=TECH170394
+
+Thanks,
+Harish]]></description>
+		<content:encoded><![CDATA[<p>Hi Arjun,</p>
+<p>Please check the below link for the solution.</p>
+<p><a href="http://www.symantec.com/business/support/index?page=content&#038;id=TECH170394" rel="nofollow">http://www.symantec.com/business/support/index?page=content&#038;id=TECH170394</a></p>
+<p>Thanks,<br />
+Harish</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: arjun</title>
+		<link>http://thegeekdiary.com/vxvm-tutorials-root-disk-encapsulation-and-mirroring/#comment-7367</link>
+		<dc:creator><![CDATA[arjun]]></dc:creator>
+		<pubDate>Thu, 07 Aug 2014 12:33:34 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=875#comment-7367</guid>
+		<description><![CDATA[while encapsulating the rootvolin linux using vxdiskadm.i am geeting the below error,How to resolve it.
+
+ VxVM vxencap ERROR V-5-2-2612
+There already exists grub entry with title &#039;vxvm_root&#039;.
+  Please remove it and then proceed]]></description>
+		<content:encoded><![CDATA[<p>while encapsulating the rootvolin linux using vxdiskadm.i am geeting the below error,How to resolve it.</p>
+<p> VxVM vxencap ERROR V-5-2-2612<br />
+There already exists grub entry with title &#8216;vxvm_root&#8217;.<br />
+  Please remove it and then proceed</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sandeep Patil</title>
+		<link>http://thegeekdiary.com/vxvm-tutorials-root-disk-encapsulation-and-mirroring/#comment-2712</link>
+		<dc:creator><![CDATA[Sandeep Patil]]></dc:creator>
+		<pubDate>Mon, 07 Apr 2014 13:08:52 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=875#comment-2712</guid>
+		<description><![CDATA[whats the error you see..?
+Make sure you have pre-allocated disk space while creating the disk in virtual machine from VMWare workstation. Also on safer side, allocate big disk atleast of size 3 GB to the VM.]]></description>
+		<content:encoded><![CDATA[<p>whats the error you see..?<br />
+Make sure you have pre-allocated disk space while creating the disk in virtual machine from VMWare workstation. Also on safer side, allocate big disk atleast of size 3 GB to the VM.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

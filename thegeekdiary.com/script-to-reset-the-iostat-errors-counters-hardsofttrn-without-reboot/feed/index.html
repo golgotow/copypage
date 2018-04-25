@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Script to reset the iostat errors counters (hard/soft/trn) without reboot</title>
+	<atom:link href="http://thegeekdiary.com/script-to-reset-the-iostat-errors-counters-hardsofttrn-without-reboot/feed/" rel="self" type="application/rss+xml" />
+	<link>http://thegeekdiary.com/script-to-reset-the-iostat-errors-counters-hardsofttrn-without-reboot/</link>
+	<description>HowTos &#124; Concepts &#124; Guides</description>
+	<lastBuildDate>Thu, 28 Jan 2016 17:21:00 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.4.2</generator>
+	<item>
+		<title>By: Sandeep Patil</title>
+		<link>http://thegeekdiary.com/script-to-reset-the-iostat-errors-counters-hardsofttrn-without-reboot/#comment-8011</link>
+		<dc:creator><![CDATA[Sandeep Patil]]></dc:creator>
+		<pubDate>Fri, 29 Aug 2014 15:24:51 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=2511#comment-8011</guid>
+		<description><![CDATA[Thanks Jan for pointing that out. Damn you Wordpress(my blogging platform) which somehow replaced &#060;MDB_RD&#062; with empty space, thinking it as some HTML tag. Anyways the script is updated, it should work just fine now.]]></description>
+		<content:encoded><![CDATA[<p>Thanks Jan for pointing that out. Damn you WordPress(my blogging platform) which somehow replaced &lt;MDB_RD&gt; with empty space, thinking it as some HTML tag. Anyways the script is updated, it should work just fine now.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sandeep Patil</title>
+		<link>http://thegeekdiary.com/script-to-reset-the-iostat-errors-counters-hardsofttrn-without-reboot/#comment-8009</link>
+		<dc:creator><![CDATA[Sandeep Patil]]></dc:creator>
+		<pubDate>Fri, 29 Aug 2014 15:09:07 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=2511#comment-8009</guid>
+		<description><![CDATA[Huy Hoang, 
+The script is updated. You can try the script now. It should work just fine.]]></description>
+		<content:encoded><![CDATA[<p>Huy Hoang,<br />
+The script is updated. You can try the script now. It should work just fine.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Huy Hoang</title>
+		<link>http://thegeekdiary.com/script-to-reset-the-iostat-errors-counters-hardsofttrn-without-reboot/#comment-7983</link>
+		<dc:creator><![CDATA[Huy Hoang]]></dc:creator>
+		<pubDate>Fri, 29 Aug 2014 03:53:45 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=2511#comment-7983</guid>
+		<description><![CDATA[i tried, but appear error:
+root@solaris10 # ./iostat-E_reset.pl 
+syntax error at ./iostat-E_reset.pl line 89, near &quot;= ;&quot;
+syntax error at ./iostat-E_reset.pl line 99, near &quot;= ;&quot;
+syntax error at ./iostat-E_reset.pl line 107, near &quot;= ;&quot;
+syntax error at ./iostat-E_reset.pl line 137, near &quot;= ;&quot;
+syntax error at ./iostat-E_reset.pl line 148, near &quot;= ;&quot;
+syntax error at ./iostat-E_reset.pl line 153, near &quot;= ;&quot;
+Execution of ./iostat-E_reset.pl aborted due to compilation errors
+
+pls check for me]]></description>
+		<content:encoded><![CDATA[<p>i tried, but appear error:<br />
+root@solaris10 # ./iostat-E_reset.pl<br />
+syntax error at ./iostat-E_reset.pl line 89, near &#8220;= ;&#8221;<br />
+syntax error at ./iostat-E_reset.pl line 99, near &#8220;= ;&#8221;<br />
+syntax error at ./iostat-E_reset.pl line 107, near &#8220;= ;&#8221;<br />
+syntax error at ./iostat-E_reset.pl line 137, near &#8220;= ;&#8221;<br />
+syntax error at ./iostat-E_reset.pl line 148, near &#8220;= ;&#8221;<br />
+syntax error at ./iostat-E_reset.pl line 153, near &#8220;= ;&#8221;<br />
+Execution of ./iostat-E_reset.pl aborted due to compilation errors</p>
+<p>pls check for me</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Jan</title>
+		<link>http://thegeekdiary.com/script-to-reset-the-iostat-errors-counters-hardsofttrn-without-reboot/#comment-7806</link>
+		<dc:creator><![CDATA[Jan]]></dc:creator>
+		<pubDate>Sat, 23 Aug 2014 10:38:57 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=2511#comment-7806</guid>
+		<description><![CDATA[I had to patch this script to get i compiled.....
+
+perl -pi -e &#039;s/= ;/= &quot;&quot;;/&#039; iostat-E_reset.pl 
+
+amerigo[8]:~/doc/solaris/clear_error_counts:&#062; vi iostat-E_reset.pl
+amerigo[9]:~/doc/solaris/clear_error_counts:&#062; perl -c iostat-E_reset.pl 
+syntax error at iostat-E_reset.pl line 89, near &quot;= ;&quot;
+syntax error at iostat-E_reset.pl line 99, near &quot;= ;&quot;
+syntax error at iostat-E_reset.pl line 107, near &quot;= ;&quot;
+syntax error at iostat-E_reset.pl line 137, near &quot;= ;&quot;
+syntax error at iostat-E_reset.pl line 148, near &quot;= ;&quot;
+syntax error at iostat-E_reset.pl line 153, near &quot;= ;&quot;
+iostat-E_reset.pl had compilation errors.]]></description>
+		<content:encoded><![CDATA[<p>I had to patch this script to get i compiled&#8230;..</p>
+<p>perl -pi -e &#8216;s/= ;/= &#8220;&#8221;;/&#8217; iostat-E_reset.pl </p>
+<p>amerigo[8]:~/doc/solaris/clear_error_counts:&gt; vi iostat-E_reset.pl<br />
+amerigo[9]:~/doc/solaris/clear_error_counts:&gt; perl -c iostat-E_reset.pl<br />
+syntax error at iostat-E_reset.pl line 89, near &#8220;= ;&#8221;<br />
+syntax error at iostat-E_reset.pl line 99, near &#8220;= ;&#8221;<br />
+syntax error at iostat-E_reset.pl line 107, near &#8220;= ;&#8221;<br />
+syntax error at iostat-E_reset.pl line 137, near &#8220;= ;&#8221;<br />
+syntax error at iostat-E_reset.pl line 148, near &#8220;= ;&#8221;<br />
+syntax error at iostat-E_reset.pl line 153, near &#8220;= ;&#8221;<br />
+iostat-E_reset.pl had compilation errors.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

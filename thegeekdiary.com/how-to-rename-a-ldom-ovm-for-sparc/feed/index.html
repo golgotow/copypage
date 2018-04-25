@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: How to rename a LDOM (OVM for SPARC)</title>
+	<atom:link href="http://thegeekdiary.com/how-to-rename-a-ldom-ovm-for-sparc/feed/" rel="self" type="application/rss+xml" />
+	<link>http://thegeekdiary.com/how-to-rename-a-ldom-ovm-for-sparc/</link>
+	<description>HowTos &#124; Concepts &#124; Guides</description>
+	<lastBuildDate>Thu, 28 Jan 2016 17:21:00 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.4.2</generator>
+	<item>
+		<title>By: eathernet</title>
+		<link>http://thegeekdiary.com/how-to-rename-a-ldom-ovm-for-sparc/#comment-9799</link>
+		<dc:creator><![CDATA[eathernet]]></dc:creator>
+		<pubDate>Wed, 20 May 2015 01:02:00 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=2170#comment-9799</guid>
+		<description><![CDATA[Thanks, great article and worked perfectly for me (running ldoms 2.2). The only issue I can see is the logical domain name in Ops Center (12.2.2 w/ JIDR 1) doesn&#039;t immediately reflect the change in names. I&#039;ve tried a refresh of the CDOM from the BUI, but still no dice. I&#039;ll wait a bit and see if it changes, or worst case I&#039;ve seen a proxadm restart (on the co-located Ops Center server) fix asset tree/BUI issues in the past...]]></description>
+		<content:encoded><![CDATA[<p>Thanks, great article and worked perfectly for me (running ldoms 2.2). The only issue I can see is the logical domain name in Ops Center (12.2.2 w/ JIDR 1) doesn&#8217;t immediately reflect the change in names. I&#8217;ve tried a refresh of the CDOM from the BUI, but still no dice. I&#8217;ll wait a bit and see if it changes, or worst case I&#8217;ve seen a proxadm restart (on the co-located Ops Center server) fix asset tree/BUI issues in the past&#8230;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sandeep</title>
+		<link>http://thegeekdiary.com/how-to-rename-a-ldom-ovm-for-sparc/#comment-9630</link>
+		<dc:creator><![CDATA[Sandeep]]></dc:creator>
+		<pubDate>Mon, 27 Oct 2014 16:06:06 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=2170#comment-9630</guid>
+		<description><![CDATA[The shutdown-group for a guest domain should be a number in the range 1-15, cause the value 0 is reserved for the primary domain.
+Edit the XML file so that the shutdown-group for the guest domain is a value in the range 1-15
+
+[Content xsi:type=&quot;ovf:VirtualSystem_Type&quot; ovf:id=&quot;ldom3&quot;]
+SNIP
+[gprop:GenericProperty key=&quot;shutdown-group&quot;]15[/gprop:GenericProperty]]]></description>
+		<content:encoded><![CDATA[<p>The shutdown-group for a guest domain should be a number in the range 1-15, cause the value 0 is reserved for the primary domain.<br />
+Edit the XML file so that the shutdown-group for the guest domain is a value in the range 1-15</p>
+<p>[Content xsi:type=&#8221;ovf:VirtualSystem_Type&#8221; ovf:id=&#8221;ldom3&#8243;]<br />
+SNIP<br />
+[gprop:GenericProperty key=&#8221;shutdown-group&#8221;]15[/gprop:GenericProperty]</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Hajee</title>
+		<link>http://thegeekdiary.com/how-to-rename-a-ldom-ovm-for-sparc/#comment-9628</link>
+		<dc:creator><![CDATA[Hajee]]></dc:creator>
+		<pubDate>Mon, 27 Oct 2014 11:49:59 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=2170#comment-9628</guid>
+		<description><![CDATA[Dear Sandeep,  Was followup above steps &#038; got some issues while adding domain, just verify the steps below:
+
+
+root@aebsapptr1 # ldm list
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  NORM  UPTIME
+primary          active     -n-cv-  UART    8     4G       0.3%  0.3%  14h 52m
+ebsdb            active     -n----  5000    12    12G      0.0%  0.0%  14h 47m
+ebsapp01         inactive   ------          32    12G
+
+root@ebsapptr1 # cp -p /var/tmp/ebsapp01.xml /var/tmp/ldm-ebsapp.xml
+root@ebsapptr1 # vi /var/tmp/ebsapp01.xml
+root@aebsapptr1 # ldm destroy ebsapp01
+root@ebsapptr1 # ldm add-domain -i /var/tmp/ldm-ebsapp.xml
+Invalid shutdown-group: 0
+
+root@ebsapptr1 # ldm add-domain -i /var/tmp/ldm-ebsapp.xml
+Invalid shutdown-group: 0
+
+root@ebsapptr1 # ldm list
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  NORM  UPTIME
+primary          active     -n-cv-  UART    8     4G       0.1%  0.1%  14h 54m
+ebsdb            active     -n----  5000    12    12G      0.0%  0.0%  14h 48m
+
+root@ebsapptr1 # ldm bind ldm-ebsapp
+LDom &quot;ldm-ebsapp&quot; was not found
+
+root@ebsapptr1 # ldm start ebsapp
+LDom &quot;ebsapp&quot; was not found
+
+root@ebsapptr1 # ldm add-domain -i /var/tmp/ldm-ebsapp.xml
+Invalid shutdown-group: 0
+
+root@ebsapptr1 # ldm add-domain /var/tmp/ldm-ebsapp.xml
+Name must start with an alpha-numberic character
+
+Illegal domain name /var/tmp/ldm-ebsapp.xml
+
+root@bsapptr1 # cd /var/tmp
+
+root@ebsapptr1 # ls -lrt&#124;grep -i ebs
+
+-rw-r--r--   1 root     root        7444 Oct 27 15:18 ldm-ebsapp.xml
+-rw-r--r--   1 root     root        7446 Oct 27 15:21 ebsapp01.xml
+add-domain -i var/tmp/ldm-
+
+Regards,
+Hahe]]></description>
+		<content:encoded><![CDATA[<p>Dear Sandeep,  Was followup above steps &amp; got some issues while adding domain, just verify the steps below:</p>
+<p>root@aebsapptr1 # ldm list<br />
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  NORM  UPTIME<br />
+primary          active     -n-cv-  UART    8     4G       0.3%  0.3%  14h 52m<br />
+ebsdb            active     -n&#8212;-  5000    12    12G      0.0%  0.0%  14h 47m<br />
+ebsapp01         inactive   &#8212;&#8212;          32    12G</p>
+<p>root@ebsapptr1 # cp -p /var/tmp/ebsapp01.xml /var/tmp/ldm-ebsapp.xml<br />
+root@ebsapptr1 # vi /var/tmp/ebsapp01.xml<br />
+root@aebsapptr1 # ldm destroy ebsapp01<br />
+root@ebsapptr1 # ldm add-domain -i /var/tmp/ldm-ebsapp.xml<br />
+Invalid shutdown-group: 0</p>
+<p>root@ebsapptr1 # ldm add-domain -i /var/tmp/ldm-ebsapp.xml<br />
+Invalid shutdown-group: 0</p>
+<p>root@ebsapptr1 # ldm list<br />
+NAME             STATE      FLAGS   CONS    VCPU  MEMORY   UTIL  NORM  UPTIME<br />
+primary          active     -n-cv-  UART    8     4G       0.1%  0.1%  14h 54m<br />
+ebsdb            active     -n&#8212;-  5000    12    12G      0.0%  0.0%  14h 48m</p>
+<p>root@ebsapptr1 # ldm bind ldm-ebsapp<br />
+LDom &#8220;ldm-ebsapp&#8221; was not found</p>
+<p>root@ebsapptr1 # ldm start ebsapp<br />
+LDom &#8220;ebsapp&#8221; was not found</p>
+<p>root@ebsapptr1 # ldm add-domain -i /var/tmp/ldm-ebsapp.xml<br />
+Invalid shutdown-group: 0</p>
+<p>root@ebsapptr1 # ldm add-domain /var/tmp/ldm-ebsapp.xml<br />
+Name must start with an alpha-numberic character</p>
+<p>Illegal domain name /var/tmp/ldm-ebsapp.xml</p>
+<p>root@bsapptr1 # cd /var/tmp</p>
+<p>root@ebsapptr1 # ls -lrt|grep -i ebs</p>
+<p>-rw-r&#8211;r&#8211;   1 root     root        7444 Oct 27 15:18 ldm-ebsapp.xml<br />
+-rw-r&#8211;r&#8211;   1 root     root        7446 Oct 27 15:21 ebsapp01.xml<br />
+add-domain -i var/tmp/ldm-</p>
+<p>Regards,<br />
+Hahe</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: How to replace failed root disk under Solaris Volume Manager (SVM)</title>
+	<atom:link href="http://thegeekdiary.com/how-to-replace-failed-root-disk-under-solaris-volume-manager-svm/feed/" rel="self" type="application/rss+xml" />
+	<link>http://thegeekdiary.com/how-to-replace-failed-root-disk-under-solaris-volume-manager-svm/</link>
+	<description>HowTos &#124; Concepts &#124; Guides</description>
+	<lastBuildDate>Thu, 28 Jan 2016 17:21:00 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.4.2</generator>
+	<item>
+		<title>By: Jean</title>
+		<link>http://thegeekdiary.com/how-to-replace-failed-root-disk-under-solaris-volume-manager-svm/#comment-9777</link>
+		<dc:creator><![CDATA[Jean]]></dc:creator>
+		<pubDate>Fri, 21 Nov 2014 15:10:00 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=1710#comment-9777</guid>
+		<description><![CDATA[Step 5 it should be
+
+# prtvtoc /dev/rdsk/c1t1d0s2 &#124; fmthard -s - /dev/rdsk/c1t0d0s2
+
+
+Step 6 It should be 
+installboot /usr/platform/sun4u/lib/fs/ufs/bootblk /dev/rdsk/c1t0d0s0]]></description>
+		<content:encoded><![CDATA[<p>Step 5 it should be</p>
+<p># prtvtoc /dev/rdsk/c1t1d0s2 | fmthard -s &#8211; /dev/rdsk/c1t0d0s2</p>
+<p>Step 6 It should be<br />
+installboot /usr/platform/sun4u/lib/fs/ufs/bootblk /dev/rdsk/c1t0d0s0</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Nikos</title>
+		<link>http://thegeekdiary.com/how-to-replace-failed-root-disk-under-solaris-volume-manager-svm/#comment-7461</link>
+		<dc:creator><![CDATA[Nikos]]></dc:creator>
+		<pubDate>Mon, 11 Aug 2014 11:37:10 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=1710#comment-7461</guid>
+		<description><![CDATA[The command 
+#prtvtoc /dev/rdsk/c1t0d0S2 &#124; fmthard -s – /dev/rdsk/c1t1d0S2 
+will replace c1t0d0 paritition table? or the c1t1d0 one?]]></description>
+		<content:encoded><![CDATA[<p>The command<br />
+#prtvtoc /dev/rdsk/c1t0d0S2 | fmthard -s – /dev/rdsk/c1t1d0S2<br />
+will replace c1t0d0 paritition table? or the c1t1d0 one?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: parameswar</title>
+		<link>http://thegeekdiary.com/how-to-replace-failed-root-disk-under-solaris-volume-manager-svm/#comment-6677</link>
+		<dc:creator><![CDATA[parameswar]]></dc:creator>
+		<pubDate>Fri, 04 Jul 2014 22:02:04 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=1710#comment-6677</guid>
+		<description><![CDATA[Hi Ramesh,
+
+prtvtoc command will work only when source and destination disks are equal size.]]></description>
+		<content:encoded><![CDATA[<p>Hi Ramesh,</p>
+<p>prtvtoc command will work only when source and destination disks are equal size.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Rumesh Durai</title>
+		<link>http://thegeekdiary.com/how-to-replace-failed-root-disk-under-solaris-volume-manager-svm/#comment-5924</link>
+		<dc:creator><![CDATA[Rumesh Durai]]></dc:creator>
+		<pubDate>Sun, 08 Jun 2014 03:00:19 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=1710#comment-5924</guid>
+		<description><![CDATA[I faced an issue while replacing the disk with different size.
+
+Im taking the same example which you have mentioned in this post.
+
+d0               m  74GB d1 (maint) d2            --- root
+    d1           s  74GB c1t0d0s0 (maint)
+    d2           s  74GB c1t1d0s0
+
+c1t0d0 - failed disk of 100 GB
+c1t1d0 - Good disk which is of 100 GB
+
+Hence I need to replace the failing disk that is c1t0d0.
+
+I had only 200 GB size disk as replacement disk.
+I have detached the mirror and replaced the disk.
+
+But faced issue while copying the VTOC.
+when I tired the below command, it dnt work because the disks is of different size.
+
+#prtvtoc /dev/rdsk/c1t0d0S2 &#124; fmthard -s - /dev/rdsk/c1t1d0S2
+
+
+Is there any other way to replace the new disk which is of different size?]]></description>
+		<content:encoded><![CDATA[<p>I faced an issue while replacing the disk with different size.</p>
+<p>Im taking the same example which you have mentioned in this post.</p>
+<p>d0               m  74GB d1 (maint) d2            &#8212; root<br />
+    d1           s  74GB c1t0d0s0 (maint)<br />
+    d2           s  74GB c1t1d0s0</p>
+<p>c1t0d0 &#8211; failed disk of 100 GB<br />
+c1t1d0 &#8211; Good disk which is of 100 GB</p>
+<p>Hence I need to replace the failing disk that is c1t0d0.</p>
+<p>I had only 200 GB size disk as replacement disk.<br />
+I have detached the mirror and replaced the disk.</p>
+<p>But faced issue while copying the VTOC.<br />
+when I tired the below command, it dnt work because the disks is of different size.</p>
+<p>#prtvtoc /dev/rdsk/c1t0d0S2 | fmthard -s &#8211; /dev/rdsk/c1t1d0S2</p>
+<p>Is there any other way to replace the new disk which is of different size?</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sandeep Patil</title>
+		<link>http://thegeekdiary.com/how-to-replace-failed-root-disk-under-solaris-volume-manager-svm/#comment-4869</link>
+		<dc:creator><![CDATA[Sandeep Patil]]></dc:creator>
+		<pubDate>Sat, 03 May 2014 06:24:33 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=1710#comment-4869</guid>
+		<description><![CDATA[Weird! This guy has has same hardware and OS version and has run same commands. &lt;a href=&quot;http://tad1982.blogspot.in/2011/05/replacing-mirrored-root-disk-in-svm-sds.html&quot; title=&quot;replacing mirrored root disk in SVM&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;http://tad1982.blogspot.in/2011/05/replacing-mirrored-root-disk-in-svm-sds.html&lt;/a&gt;.
+
+Can you boot from the original disk now ? If so, can you see any errors in messages file?]]></description>
+		<content:encoded><![CDATA[<p>Weird! This guy has has same hardware and OS version and has run same commands. <a href="http://tad1982.blogspot.in/2011/05/replacing-mirrored-root-disk-in-svm-sds.html" title="replacing mirrored root disk in SVM" target="_blank" rel="nofollow">http://tad1982.blogspot.in/2011/05/replacing-mirrored-root-disk-in-svm-sds.html</a>.</p>
+<p>Can you boot from the original disk now ? If so, can you see any errors in messages file?</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: A beginners guide to Service Management Facility (SMF) in Solaris</title>
+	<atom:link href="http://thegeekdiary.com/a-beginners-guide-to-service-management-facility-smf-in-solaris/feed/" rel="self" type="application/rss+xml" />
+	<link>http://thegeekdiary.com/a-beginners-guide-to-service-management-facility-smf-in-solaris/</link>
+	<description>HowTos &#124; Concepts &#124; Guides</description>
+	<lastBuildDate>Thu, 28 Jan 2016 17:21:00 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.4.2</generator>
+	<item>
+		<title>By: GK</title>
+		<link>http://thegeekdiary.com/a-beginners-guide-to-service-management-facility-smf-in-solaris/#comment-7920</link>
+		<dc:creator><![CDATA[GK]]></dc:creator>
+		<pubDate>Wed, 27 Aug 2014 13:03:25 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=2205#comment-7920</guid>
+		<description><![CDATA[Hi Sandeep,
+
+Good work .. Thank you.
+
+You covered most of the needed things for SMF, however inetadm and inetd ( Delegated restarter) may need to include .
+
+
+Excerpt from one Oracle Doc:
+
+=====================================
+Administering Network Services with inetadm
+The management of built-in network services in the Solaris 10 OS is now handled through SMF. The
+Internet services daemon, inetd(1M), has been rewritten as a part of SMF, and configuration data for
+network services is now stored in the SMF repository rather than in /etc/inet/inetd.conf. This allows
+the SMF tools to be used to control and observe inetd-based network services.
+Any records remaining in /etc/inet/inetd.conf after an OS upgrade to the Solaris 10 OS, or later
+created by installing additional software, must be converted to SMF and imported into the SMF repository
+using inetconv(1M) — otherwise the service will not be available. To provide compatibility for services
+which have not yet been converted to SMF, entries can be added to inetd.conf using traditional syntax,
+and the utility inetconv will convert the new services to SMF. The command inetconv should always be
+run after changing /etc/inet/inetd.conf. Note that inetconv is run automatically during the first reboot
+after an OS installation or upgrade. If inetd.conf has been modified since inetconv was run, then inetd
+sends reminder messages to syslog.
+After inetd.conf has converted a service, inetadm can be used to change properties of the converted
+service. The SMF utilities (such as svcs, svcadm, etc.) can also be used to observe the service and perform
+common actions.
+
+============================]]></description>
+		<content:encoded><![CDATA[<p>Hi Sandeep,</p>
+<p>Good work .. Thank you.</p>
+<p>You covered most of the needed things for SMF, however inetadm and inetd ( Delegated restarter) may need to include .</p>
+<p>Excerpt from one Oracle Doc:</p>
+<p>=====================================<br />
+Administering Network Services with inetadm<br />
+The management of built-in network services in the Solaris 10 OS is now handled through SMF. The<br />
+Internet services daemon, inetd(1M), has been rewritten as a part of SMF, and configuration data for<br />
+network services is now stored in the SMF repository rather than in /etc/inet/inetd.conf. This allows<br />
+the SMF tools to be used to control and observe inetd-based network services.<br />
+Any records remaining in /etc/inet/inetd.conf after an OS upgrade to the Solaris 10 OS, or later<br />
+created by installing additional software, must be converted to SMF and imported into the SMF repository<br />
+using inetconv(1M) — otherwise the service will not be available. To provide compatibility for services<br />
+which have not yet been converted to SMF, entries can be added to inetd.conf using traditional syntax,<br />
+and the utility inetconv will convert the new services to SMF. The command inetconv should always be<br />
+run after changing /etc/inet/inetd.conf. Note that inetconv is run automatically during the first reboot<br />
+after an OS installation or upgrade. If inetd.conf has been modified since inetconv was run, then inetd<br />
+sends reminder messages to syslog.<br />
+After inetd.conf has converted a service, inetadm can be used to change properties of the converted<br />
+service. The SMF utilities (such as svcs, svcadm, etc.) can also be used to observe the service and perform<br />
+common actions.</p>
+<p>============================</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

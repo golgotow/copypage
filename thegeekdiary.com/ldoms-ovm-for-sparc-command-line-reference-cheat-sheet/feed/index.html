@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: LDOMs (OVM for SPARC) Command line reference [cheat sheet]</title>
+	<atom:link href="http://thegeekdiary.com/ldoms-ovm-for-sparc-command-line-reference-cheat-sheet/feed/" rel="self" type="application/rss+xml" />
+	<link>http://thegeekdiary.com/ldoms-ovm-for-sparc-command-line-reference-cheat-sheet/</link>
+	<description>HowTos &#124; Concepts &#124; Guides</description>
+	<lastBuildDate>Thu, 28 Jan 2016 17:21:00 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.4.2</generator>
+	<item>
+		<title>By: Sandeep Patil</title>
+		<link>http://thegeekdiary.com/ldoms-ovm-for-sparc-command-line-reference-cheat-sheet/#comment-9772</link>
+		<dc:creator><![CDATA[Sandeep Patil]]></dc:creator>
+		<pubDate>Thu, 06 Nov 2014 12:34:00 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=2490#comment-9772</guid>
+		<description><![CDATA[I guess you want to ask &quot;how to add iscsi storage to LDOMs?&quot;
+
+Its the same way you add any normal disk (local or SAN).
+
+primary # ldm add-vdsdev /dev/dsk/c1t0d0s2 disk2G@primary-vds0
+primary # ldm add-vdisk disk2 disk2@primary-vds0 ldom01]]></description>
+		<content:encoded><![CDATA[<p>I guess you want to ask &#8220;how to add iscsi storage to LDOMs?&#8221;</p>
+<p>Its the same way you add any normal disk (local or SAN).</p>
+<p>primary # ldm add-vdsdev /dev/dsk/c1t0d0s2 disk2G@primary-vds0<br />
+primary # ldm add-vdisk disk2 disk2@primary-vds0 ldom01</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: pradeepvarma.k</title>
+		<link>http://thegeekdiary.com/ldoms-ovm-for-sparc-command-line-reference-cheat-sheet/#comment-9771</link>
+		<dc:creator><![CDATA[pradeepvarma.k]]></dc:creator>
+		<pubDate>Thu, 06 Nov 2014 10:05:00 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=2490#comment-9771</guid>
+		<description><![CDATA[Hi how i can fire and ISCSI storage to the ldoms]]></description>
+		<content:encoded><![CDATA[<p>Hi how i can fire and ISCSI storage to the ldoms</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: The ultimate Solaris CRON troubleshooting guide</title>
+	<atom:link href="http://thegeekdiary.com/the-ultimate-solaris-cron-troubleshooting-guide/feed/" rel="self" type="application/rss+xml" />
+	<link>http://thegeekdiary.com/the-ultimate-solaris-cron-troubleshooting-guide/</link>
+	<description>HowTos &#124; Concepts &#124; Guides</description>
+	<lastBuildDate>Thu, 28 Jan 2016 17:21:00 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.4.2</generator>
+	<item>
+		<title>By: Sandeep Patil</title>
+		<link>http://thegeekdiary.com/the-ultimate-solaris-cron-troubleshooting-guide/#comment-9878</link>
+		<dc:creator><![CDATA[Sandeep Patil]]></dc:creator>
+		<pubDate>Thu, 28 Jan 2016 17:21:00 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=1970#comment-9878</guid>
+		<description><![CDATA[No you don&#039;t. May be that script is a long running script or you haven&#039;t commented it out yet.]]></description>
+		<content:encoded><![CDATA[<p>No you don&#8217;t. May be that script is a long running script or you haven&#8217;t commented it out yet.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sam</title>
+		<link>http://thegeekdiary.com/the-ultimate-solaris-cron-troubleshooting-guide/#comment-9792</link>
+		<dc:creator><![CDATA[Sam]]></dc:creator>
+		<pubDate>Wed, 25 Feb 2015 06:38:00 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=1970#comment-9792</guid>
+		<description><![CDATA[do I need to restart the cron service if I edit the root crontab? 
+reason I am asking is because scripts under root is still running after commenting them out.]]></description>
+		<content:encoded><![CDATA[<p>do I need to restart the cron service if I edit the root crontab?<br />
+reason I am asking is because scripts under root is still running after commenting them out.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Frank Van Damme</title>
+		<link>http://thegeekdiary.com/the-ultimate-solaris-cron-troubleshooting-guide/#comment-9616</link>
+		<dc:creator><![CDATA[Frank Van Damme]]></dc:creator>
+		<pubDate>Tue, 07 Oct 2014 14:00:04 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=1970#comment-9616</guid>
+		<description><![CDATA[You said redirection? This is what I do: 
+
+0 0 * * * bash -c &quot;couple of commands 2&#062;&#038;1 &#124; tee logfile &#124; tee &#062;(mailx -s &#039;your log, sir&#039; foo@example.com someotherperson@example.com) &quot;]]></description>
+		<content:encoded><![CDATA[<p>You said redirection? This is what I do: </p>
+<p>0 0 * * * bash -c &#8220;couple of commands 2&gt;&amp;1 | tee logfile | tee &gt;(mailx -s &#8216;your log, sir&#8217; <a href="mailto:foo@example.com">foo@example.com</a> <a href="mailto:someotherperson@example.com">someotherperson@example.com</a>) &#8220;</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: shuron</title>
+		<link>http://thegeekdiary.com/the-ultimate-solaris-cron-troubleshooting-guide/#comment-9417</link>
+		<dc:creator><![CDATA[shuron]]></dc:creator>
+		<pubDate>Tue, 30 Sep 2014 20:01:35 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=1970#comment-9417</guid>
+		<description><![CDATA[Thank you, it&#039;s very good introduction. But what exactly goes to /var/cron/log? 
+seemes nothing. If you&#039;re not root? I&#039;m using debian.]]></description>
+		<content:encoded><![CDATA[<p>Thank you, it&#8217;s very good introduction. But what exactly goes to /var/cron/log?<br />
+seemes nothing. If you&#8217;re not root? I&#8217;m using debian.</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Script to label multiple disks in Solaris</title>
+	<atom:link href="http://thegeekdiary.com/script-to-label-multiple-disk-in-solaris/feed/" rel="self" type="application/rss+xml" />
+	<link>http://thegeekdiary.com/script-to-label-multiple-disk-in-solaris/</link>
+	<description>HowTos &#124; Concepts &#124; Guides</description>
+	<lastBuildDate>Thu, 28 Jan 2016 17:21:00 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.4.2</generator>
+	<item>
+		<title>By: Dan Liston</title>
+		<link>http://thegeekdiary.com/script-to-label-multiple-disk-in-solaris/#comment-9788</link>
+		<dc:creator><![CDATA[Dan Liston]]></dc:creator>
+		<pubDate>Sat, 20 Dec 2014 20:35:00 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=2084#comment-9788</guid>
+		<description><![CDATA[I like the concept and premise of using a script, but unfortunately this does not always work.  In your posted example, there are many assumptions that are not pointed out.  Such as the disks are all the same size, with the same number of cylinders, heads, etc.  I believe there is also an assumption that the disks have a label defined in /etc/format.dat, and this label is the default label.  Lastly, I think the script assumes (depending on the default label) that all space on the disk will be used without special swap or reserved requirements.  
+
+Could you touch on some of these topics?
+
+I recently had 25 EMC disks provisioned to my server.  The first was 80GB, the next 4 were 240GB, and the last 20 were all 450GB.  What would you recommend as prerequisites and a script or scripts for this scenario?  When I tried your script in my environment to create zpools, all of them turned out much smaller than I was expecting, and I had to go back into format to manually adjust each disk&#039;s label, then destroy and re-create my zpools.
+
+Thanks,
+Dan]]></description>
+		<content:encoded><![CDATA[<p>I like the concept and premise of using a script, but unfortunately this does not always work.  In your posted example, there are many assumptions that are not pointed out.  Such as the disks are all the same size, with the same number of cylinders, heads, etc.  I believe there is also an assumption that the disks have a label defined in /etc/format.dat, and this label is the default label.  Lastly, I think the script assumes (depending on the default label) that all space on the disk will be used without special swap or reserved requirements.  </p>
+<p>Could you touch on some of these topics?</p>
+<p>I recently had 25 EMC disks provisioned to my server.  The first was 80GB, the next 4 were 240GB, and the last 20 were all 450GB.  What would you recommend as prerequisites and a script or scripts for this scenario?  When I tried your script in my environment to create zpools, all of them turned out much smaller than I was expecting, and I had to go back into format to manually adjust each disk&#8217;s label, then destroy and re-create my zpools.</p>
+<p>Thanks,<br />
+Dan</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

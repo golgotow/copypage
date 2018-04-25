@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: Solaris Volume Manager (SVM) : Growing mirrored metadevices online</title>
+	<atom:link href="http://thegeekdiary.com/solaris-volume-manager-svm-growing-mirrored-metadevices-online/feed/" rel="self" type="application/rss+xml" />
+	<link>http://thegeekdiary.com/solaris-volume-manager-svm-growing-mirrored-metadevices-online/</link>
+	<description>HowTos &#124; Concepts &#124; Guides</description>
+	<lastBuildDate>Thu, 28 Jan 2016 17:21:00 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.4.2</generator>
+	<item>
+		<title>By: kimero</title>
+		<link>http://thegeekdiary.com/solaris-volume-manager-svm-growing-mirrored-metadevices-online/#comment-9872</link>
+		<dc:creator><![CDATA[kimero]]></dc:creator>
+		<pubDate>Mon, 28 Dec 2015 19:16:00 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=2376#comment-9872</guid>
+		<description><![CDATA[Thank you for this! I successfully expanded some old md filesystems using newer disks and growfs was faster than expected]]></description>
+		<content:encoded><![CDATA[<p>Thank you for this! I successfully expanded some old md filesystems using newer disks and growfs was faster than expected</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sandeep Patil</title>
+		<link>http://thegeekdiary.com/solaris-volume-manager-svm-growing-mirrored-metadevices-online/#comment-9769</link>
+		<dc:creator><![CDATA[Sandeep Patil]]></dc:creator>
+		<pubDate>Thu, 30 Oct 2014 18:11:00 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=2376#comment-9769</guid>
+		<description><![CDATA[Ohh ! my bad. Made the necessary corrections. Thanks for pointing that out.]]></description>
+		<content:encoded><![CDATA[<p>Ohh ! my bad. Made the necessary corrections. Thanks for pointing that out.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sandeep Patil</title>
+		<link>http://thegeekdiary.com/solaris-volume-manager-svm-growing-mirrored-metadevices-online/#comment-7750</link>
+		<dc:creator><![CDATA[Sandeep Patil]]></dc:creator>
+		<pubDate>Thu, 21 Aug 2014 07:46:25 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=2376#comment-7750</guid>
+		<description><![CDATA[Nope. not possible. And by the way root volumes can not have a 4 way mirror in the first place in any volume manager.]]></description>
+		<content:encoded><![CDATA[<p>Nope. not possible. And by the way root volumes can not have a 4 way mirror in the first place in any volume manager.</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: harish</title>
+		<link>http://thegeekdiary.com/solaris-volume-manager-svm-growing-mirrored-metadevices-online/#comment-7746</link>
+		<dc:creator><![CDATA[harish]]></dc:creator>
+		<pubDate>Thu, 21 Aug 2014 06:28:38 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=2376#comment-7746</guid>
+		<description><![CDATA[Can we use this methode to increase &quot;root&quot; file system? 
+
+I mean 
+1 detach the mirror
+2 increase the slice of mirror disk, 
+3 attach the mirror slice wait for sync
+4 metattach mirror
+5 grow the &quot;root&quot; file system  &quot;growfs -M / /dev/md/rdsk/d3]]></description>
+		<content:encoded><![CDATA[<p>Can we use this methode to increase &#8220;root&#8221; file system? </p>
+<p>I mean<br />
+1 detach the mirror<br />
+2 increase the slice of mirror disk,<br />
+3 attach the mirror slice wait for sync<br />
+4 metattach mirror<br />
+5 grow the &#8220;root&#8221; file system  &#8220;growfs -M / /dev/md/rdsk/d3</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Mani</title>
+		<link>http://thegeekdiary.com/solaris-volume-manager-svm-growing-mirrored-metadevices-online/#comment-7644</link>
+		<dc:creator><![CDATA[Mani]]></dc:creator>
+		<pubDate>Mon, 18 Aug 2014 08:10:46 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=2376#comment-7644</guid>
+		<description><![CDATA[Please find the below df and metastat output and kindly provide me step by step action plan for the storage Migration .... Existing storage will be upgraded to new storage version . 
+
+Please let me know if any query /output.
+
+df -kh
+Filesystem             size   used  avail capacity  Mounted on
+/dev/md/dsk/d0          20G   8.9G    11G    46%    /
+/devices                 0K     0K     0K     0%    /devices
+ctfs                     0K     0K     0K     0%    /system/contract
+proc                     0K     0K     0K     0%    /proc
+mnttab                   0K     0K     0K     0%    /etc/mnttab
+swap                    17G   1.6M    17G     1%    /etc/svc/volatile
+objfs                    0K     0K     0K     0%    /system/object
+sharefs                  0K     0K     0K     0%    /etc/dfs/sharetab
+/platform/sun4u-us3/lib/libc_psr/libc_psr_hwcap2.so.1
+                        20G   8.9G    11G    46%    /platform/sun4u-us3/lib/libc_psr.so.1
+/platform/sun4u-us3/lib/sparcv9/libc_psr/libc_psr_hwcap2.so.1
+                        20G   8.9G    11G    46%    /platform/sun4u-us3/lib/sparcv9/libc_psr.so.1
+fd                       0K     0K     0K     0%    /dev/fd
+/dev/md/dsk/d7          34G    27G   7.0G    80%    /var
+swap                   2.0G   160K   2.0G     1%    /tmp
+swap                    17G    72K    17G     1%    /var/run
+/dev/md/dsk/d400        25G    18G   6.2G    75%    /zones/wmsapp-d21
+/dev/md/dsk/d500        25G    17G   7.5G    70%    /zones/wmsapp-q21
+/dev/md/dsk/d504        47G   9.5G    37G    21%    /zones/wmsapp-q21/fs/wmsq
+/dev/md/dsk/d404        47G   8.1G    39G    18%    /zones/wmsapp-d21/fs/wmsd
+/dev/md/dsk/d602        10G   1.6G   8.3G    17%    /zones/wmsapp-q21/fs/iface/LYNQ2
+/dev/md/dsk/d601        10G   5.2G   4.8G    53%    /zones/wmsapp-q21/fs/wms/LYNQ2
+[root@server
+
+[root@server# metastat -c
+d602             p   10GB d600
+d601             p   10GB d600
+    d600         s   29GB /dev/dsk/emcpower0a
+d500             m   25GB d502 d501
+    d502         s   25GB c1t1d0s5
+    d501         s   25GB c1t0d0s5
+d7               m   34GB d27 d17
+    d27          s   34GB c1t1d0s7
+    d17          s   34GB c1t0d0s7
+d0               m   20GB d20 d10
+    d20          s   20GB c1t1d0s0
+    d10          s   20GB c1t0d0s0
+d1               m   32GB d21 d11
+    d21          s   32GB c1t1d0s1
+    d11          s   32GB c1t0d0s1
+d400             m   25GB d402 d401
+    d402         s   25GB c1t1d0s4
+    d401         s   25GB c1t0d0s4
+d504             s   47GB /dev/dsk/emcpower6g /dev/dsk/emcpower7g
+d503             s   46GB /dev/dsk/emcpower2g /dev/dsk/emcpower3g
+d403             s   46GB /dev/dsk/emcpower0g /dev/dsk/emcpower1g
+d404             s   47GB /dev/dsk/emcpower4g /dev/dsk/emcpower5g
+You have new mail in /var/mail/root
+[root@server]]></description>
+		<content:encoded><![CDATA[<p>Please find the below df and metastat output and kindly provide me step by step action plan for the storage Migration &#8230;. Existing storage will be upgraded to new storage version . </p>
+<p>Please let me know if any query /output.</p>
+<p>df -kh<br />
+Filesystem             size   used  avail capacity  Mounted on<br />
+/dev/md/dsk/d0          20G   8.9G    11G    46%    /<br />
+/devices                 0K     0K     0K     0%    /devices<br />
+ctfs                     0K     0K     0K     0%    /system/contract<br />
+proc                     0K     0K     0K     0%    /proc<br />
+mnttab                   0K     0K     0K     0%    /etc/mnttab<br />
+swap                    17G   1.6M    17G     1%    /etc/svc/volatile<br />
+objfs                    0K     0K     0K     0%    /system/object<br />
+sharefs                  0K     0K     0K     0%    /etc/dfs/sharetab<br />
+/platform/sun4u-us3/lib/libc_psr/libc_psr_hwcap2.so.1<br />
+                        20G   8.9G    11G    46%    /platform/sun4u-us3/lib/libc_psr.so.1<br />
+/platform/sun4u-us3/lib/sparcv9/libc_psr/libc_psr_hwcap2.so.1<br />
+                        20G   8.9G    11G    46%    /platform/sun4u-us3/lib/sparcv9/libc_psr.so.1<br />
+fd                       0K     0K     0K     0%    /dev/fd<br />
+/dev/md/dsk/d7          34G    27G   7.0G    80%    /var<br />
+swap                   2.0G   160K   2.0G     1%    /tmp<br />
+swap                    17G    72K    17G     1%    /var/run<br />
+/dev/md/dsk/d400        25G    18G   6.2G    75%    /zones/wmsapp-d21<br />
+/dev/md/dsk/d500        25G    17G   7.5G    70%    /zones/wmsapp-q21<br />
+/dev/md/dsk/d504        47G   9.5G    37G    21%    /zones/wmsapp-q21/fs/wmsq<br />
+/dev/md/dsk/d404        47G   8.1G    39G    18%    /zones/wmsapp-d21/fs/wmsd<br />
+/dev/md/dsk/d602        10G   1.6G   8.3G    17%    /zones/wmsapp-q21/fs/iface/LYNQ2<br />
+/dev/md/dsk/d601        10G   5.2G   4.8G    53%    /zones/wmsapp-q21/fs/wms/LYNQ2<br />
+[root@server</p>
+<p>[root@server# metastat -c<br />
+d602             p   10GB d600<br />
+d601             p   10GB d600<br />
+    d600         s   29GB /dev/dsk/emcpower0a<br />
+d500             m   25GB d502 d501<br />
+    d502         s   25GB c1t1d0s5<br />
+    d501         s   25GB c1t0d0s5<br />
+d7               m   34GB d27 d17<br />
+    d27          s   34GB c1t1d0s7<br />
+    d17          s   34GB c1t0d0s7<br />
+d0               m   20GB d20 d10<br />
+    d20          s   20GB c1t1d0s0<br />
+    d10          s   20GB c1t0d0s0<br />
+d1               m   32GB d21 d11<br />
+    d21          s   32GB c1t1d0s1<br />
+    d11          s   32GB c1t0d0s1<br />
+d400             m   25GB d402 d401<br />
+    d402         s   25GB c1t1d0s4<br />
+    d401         s   25GB c1t0d0s4<br />
+d504             s   47GB /dev/dsk/emcpower6g /dev/dsk/emcpower7g<br />
+d503             s   46GB /dev/dsk/emcpower2g /dev/dsk/emcpower3g<br />
+d403             s   46GB /dev/dsk/emcpower0g /dev/dsk/emcpower1g<br />
+d404             s   47GB /dev/dsk/emcpower4g /dev/dsk/emcpower5g<br />
+You have new mail in /var/mail/root<br />
+[root@server</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>

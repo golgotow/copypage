@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>Comments on: How to configure Solaris 10 Link Based IPMP</title>
+	<atom:link href="http://thegeekdiary.com/how-to-configure-solaris-10-link-based-ipmp/feed/" rel="self" type="application/rss+xml" />
+	<link>http://thegeekdiary.com/how-to-configure-solaris-10-link-based-ipmp/</link>
+	<description>HowTos &#124; Concepts &#124; Guides</description>
+	<lastBuildDate>Thu, 28 Jan 2016 17:21:00 +0000</lastBuildDate>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.4.2</generator>
+	<item>
+		<title>By: Rahul</title>
+		<link>http://thegeekdiary.com/how-to-configure-solaris-10-link-based-ipmp/#comment-9618</link>
+		<dc:creator><![CDATA[Rahul]]></dc:creator>
+		<pubDate>Tue, 14 Oct 2014 11:48:20 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=1759#comment-9618</guid>
+		<description><![CDATA[Hi,
+
+Interface is showing UP in ifconfig -a cmd we are able to login through this but in dladm show-dev cmd the link shows down, bnxe4 shows that behavior output log below:
+
+# dladm show-dev
+bnxe0           link: up        speed: 10000 Mbps       duplex: full
+bnxe1           link: up        speed: 10000 Mbps       duplex: full
+bnxe2           link: up        speed: 10000 Mbps       duplex: full
+bnxe3           link: unknown   speed: 0     Mbps       duplex: unknown
+bnxe4           link: down      speed: 0     Mbps       duplex: half
+bnxe5           link: up        speed: 10000 Mbps       duplex: full
+bnxe6           link: unknown   speed: 0     Mbps       duplex: unknown
+bnxe7           link: unknown   speed: 0     Mbps       duplex: unknown
+
+
+=====================================
+
+ ifconfig -a
+lo0: flags=2001000849 mtu 8232 index 1
+        inet 127.0.0.1 netmask ff000000
+bnxe0: flags=9040843 mtu 1500 index 2
+        inet 172.16.225.20 netmask ffffffe0 broadcast 172.16.225.31
+        groupname pub_mnic
+        ether f0:92:1c:16:17:60
+bnxe0:1: flags=1000843 mtu 1500 index 2
+        inet 172.16.225.19 netmask ffffffe0 broadcast 172.16.225.31
+bnxe1: flags=9040843 mtu 1500 index 3
+        inet 172.16.225.21 netmask ffffffe0 broadcast 172.16.225.31
+        groupname pub_mnic
+        ether f0:92:1c:16:17:64
+bnxe2: flags=1000843 mtu 1500 index 4
+        inet 10.108.57.147 netmask ffffffc0 broadcast 10.108.57.191
+        ether f0:92:1c:16:17:61
+bnxe4: flags=19040803 mtu 1500 index 5
+        inet 10.108.58.64 netmask ffffff80 broadcast 10.108.58.127
+        groupname stor_mnic
+        ether f0:92:1c:16:17:62
+bnxe5: flags=9040843 mtu 1500 index 6
+        inet 10.108.58.65 netmask ffffff80 broadcast 10.108.58.127
+        groupname stor_mnic
+        ether f0:92:1c:16:17:66
+bnxe5:1: flags=1000843 mtu 1500 index 6
+        inet 10.108.58.63 netmask ffffff80 broadcast 10.108.58.127
+lo0: flags=2002000849 mtu 8252 index 1
+        inet6 ::1/128
+bnxe0: flags=2000841 mtu 1500 index 2
+        inet6 fe80::f292:1cff:fe16:1760/10
+        groupname pub_mnic
+        ether f0:92:1c:16:17:60
+
+
+Please reply on my mail id : rahulv2367@gmail.com.
+
+Thanks in Advance.
+
+Rahul]]></description>
+		<content:encoded><![CDATA[<p>Hi,</p>
+<p>Interface is showing UP in ifconfig -a cmd we are able to login through this but in dladm show-dev cmd the link shows down, bnxe4 shows that behavior output log below:</p>
+<p># dladm show-dev<br />
+bnxe0           link: up        speed: 10000 Mbps       duplex: full<br />
+bnxe1           link: up        speed: 10000 Mbps       duplex: full<br />
+bnxe2           link: up        speed: 10000 Mbps       duplex: full<br />
+bnxe3           link: unknown   speed: 0     Mbps       duplex: unknown<br />
+bnxe4           link: down      speed: 0     Mbps       duplex: half<br />
+bnxe5           link: up        speed: 10000 Mbps       duplex: full<br />
+bnxe6           link: unknown   speed: 0     Mbps       duplex: unknown<br />
+bnxe7           link: unknown   speed: 0     Mbps       duplex: unknown</p>
+<p>=====================================</p>
+<p> ifconfig -a<br />
+lo0: flags=2001000849 mtu 8232 index 1<br />
+        inet 127.0.0.1 netmask ff000000<br />
+bnxe0: flags=9040843 mtu 1500 index 2<br />
+        inet 172.16.225.20 netmask ffffffe0 broadcast 172.16.225.31<br />
+        groupname pub_mnic<br />
+        ether f0:92:1c:16:17:60<br />
+bnxe0:1: flags=1000843 mtu 1500 index 2<br />
+        inet 172.16.225.19 netmask ffffffe0 broadcast 172.16.225.31<br />
+bnxe1: flags=9040843 mtu 1500 index 3<br />
+        inet 172.16.225.21 netmask ffffffe0 broadcast 172.16.225.31<br />
+        groupname pub_mnic<br />
+        ether f0:92:1c:16:17:64<br />
+bnxe2: flags=1000843 mtu 1500 index 4<br />
+        inet 10.108.57.147 netmask ffffffc0 broadcast 10.108.57.191<br />
+        ether f0:92:1c:16:17:61<br />
+bnxe4: flags=19040803 mtu 1500 index 5<br />
+        inet 10.108.58.64 netmask ffffff80 broadcast 10.108.58.127<br />
+        groupname stor_mnic<br />
+        ether f0:92:1c:16:17:62<br />
+bnxe5: flags=9040843 mtu 1500 index 6<br />
+        inet 10.108.58.65 netmask ffffff80 broadcast 10.108.58.127<br />
+        groupname stor_mnic<br />
+        ether f0:92:1c:16:17:66<br />
+bnxe5:1: flags=1000843 mtu 1500 index 6<br />
+        inet 10.108.58.63 netmask ffffff80 broadcast 10.108.58.127<br />
+lo0: flags=2002000849 mtu 8252 index 1<br />
+        inet6 ::1/128<br />
+bnxe0: flags=2000841 mtu 1500 index 2<br />
+        inet6 fe80::f292:1cff:fe16:1760/10<br />
+        groupname pub_mnic<br />
+        ether f0:92:1c:16:17:60</p>
+<p>Please reply on my mail id : <a href="mailto:rahulv2367@gmail.com">rahulv2367@gmail.com</a>.</p>
+<p>Thanks in Advance.</p>
+<p>Rahul</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sandeep Patil</title>
+		<link>http://thegeekdiary.com/how-to-configure-solaris-10-link-based-ipmp/#comment-8250</link>
+		<dc:creator><![CDATA[Sandeep Patil]]></dc:creator>
+		<pubDate>Wed, 10 Sep 2014 14:13:57 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=1759#comment-8250</guid>
+		<description><![CDATA[Awesome ! Stay tuned ! Cheers !]]></description>
+		<content:encoded><![CDATA[<p>Awesome ! Stay tuned ! Cheers !</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sandeep Patil</title>
+		<link>http://thegeekdiary.com/how-to-configure-solaris-10-link-based-ipmp/#comment-8249</link>
+		<dc:creator><![CDATA[Sandeep Patil]]></dc:creator>
+		<pubDate>Wed, 10 Sep 2014 14:13:04 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=1759#comment-8249</guid>
+		<description><![CDATA[Always a pleasure ! :)]]></description>
+		<content:encoded><![CDATA[<p>Always a pleasure ! :)</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: S. Patel</title>
+		<link>http://thegeekdiary.com/how-to-configure-solaris-10-link-based-ipmp/#comment-8239</link>
+		<dc:creator><![CDATA[S. Patel]]></dc:creator>
+		<pubDate>Tue, 09 Sep 2014 18:45:57 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=1759#comment-8239</guid>
+		<description><![CDATA[Wow this saved me a lot of time - you are a genius!]]></description>
+		<content:encoded><![CDATA[<p>Wow this saved me a lot of time &#8211; you are a genius!</p>
+]]></content:encoded>
+	</item>
+	<item>
+		<title>By: Sandeep P.</title>
+		<link>http://thegeekdiary.com/how-to-configure-solaris-10-link-based-ipmp/#comment-8238</link>
+		<dc:creator><![CDATA[Sandeep P.]]></dc:creator>
+		<pubDate>Tue, 09 Sep 2014 18:44:28 +0000</pubDate>
+		<guid isPermaLink="false">http://thegeekdiary.com/?p=1759#comment-8238</guid>
+		<description><![CDATA[Great Article Sandeep!!!]]></description>
+		<content:encoded><![CDATA[<p>Great Article Sandeep!!!</p>
+]]></content:encoded>
+	</item>
+</channel>
+</rss>
